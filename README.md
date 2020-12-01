@@ -1,6 +1,8 @@
 # Tomagotchi
 a simple Tomagotchi game
 
-[!Wireframe](images/img_1254.jpg)
+![Wireframe](https://github.com/nistalb/Tomagotchi/blob/main/images/img_1254.jpg)
 
+
+User Story
 
