@@ -12,6 +12,7 @@ $("#start").on("click", function (event){
     getName();
 })
 
+
 //this will swicth between the game screen and the notice screen
 const switchScreens = function(){
     let $noticeScreen = $("#notice-screen");
@@ -35,11 +36,13 @@ const getName = function getName() {
         petName = $("input").val();
         $($name).remove();
         $("#notice-screen").append(`Your new pet ${petName} is about to hatch!`);
+        delayTimer(3);
     });
 };
 
 //this function will create a timer for the various elements of hte game
 
-const timer = function timer(time){
-    
+const delayTimer = function delayTimer(seconds){
+    setTimeout(switchScreens, seconds * 1000);
 }
+
