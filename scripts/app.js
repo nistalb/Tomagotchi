@@ -1,9 +1,14 @@
 
 let babyfood = ["peas", "creamed corn"];
 
-//create the start button that will begin the game
+//create the start button that will begin the game and append to the screen
 let $startButton = $("<button id = 'start'>Start Game</button>")
 $("#notice-screen").append($startButton);
+
+//initialize the image on the game-screen
+let $egg = $("<img id='baby-unicorn' src = 'https://www.aurorawings.com/uploads/9/3/5/0/9350138/s175561970794400002_p621_i210_w798.jpeg' alt = 'baby unicorn'>");
+$("#game-screen").append($egg);
+
 
 //create the event listener that will tell when the start button is pushed
 $("#start").on("click", function (event){
@@ -26,7 +31,7 @@ const switchScreens = function(){
     }    
 }
 
-//this function will collect name and print onto the screen
+//this function will collect pets name and print onto the screen
 let petName = "";
 
 const getName = function getName() {
@@ -35,7 +40,7 @@ const getName = function getName() {
     $("#pet-name").on("click", function(event){
         petName = $("input").val();
         $($name).remove();
-        $("#notice-screen").append(`Your new pet ${petName} is about to hatch!`);
+        $("#notice-screen").append(`Your new pet ${petName} has been born!`);
         delayTimer(3);
     });
 };
@@ -79,4 +84,51 @@ const decrementBoredom = function decrementBoredom(bored){
 }
 
 
+let time = 120;
+    const setTimer = function setTimer(){
+        const updateTime = function updateTime(){
+            $("#time").text(time);
+            time--;
+            if (time <= 0){
+                clearInterval(timer);
+                lifecycle++;
+                if (lifecycle <= 4){
+                    playGame();
+                }
+            }
+        }
+        const timer = setInterval(updateTime, 1000);
+}
 
+const babyPet = function babyPet() {
+    let hunger = 0;
+    let boredom = 0;
+    let sleep = 0;
+   
+    while (time > 0) {
+        const updateStats = function updateStats() {
+            let deltaTime = 120 - time;
+            console.log(deltaTime);
+            if(deltaTime % 5 === 0){
+                hunger++
+                boredom++
+                sleep++
+                incrementBoredom();
+                incrementHunger();
+                incrementSleepiness();
+            }
+        }
+        setInterval(updateStats, 500);
+    }
+}
+
+let lifecycle = 1;
+
+const playGame = function playGame (){
+    if (lifecycle === 1) {
+        babyPet ();
+        time = 120;
+    }
+    
+    setTimer();
+}
