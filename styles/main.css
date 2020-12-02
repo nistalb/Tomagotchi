@@ -59,3 +59,18 @@ img {
     width: 700px;
     height: 500px;
 }
+
+#start {
+    font-family: 'Englebert', sans-serif;
+    position: absolute;
+    padding: 5px;
+    height: 30px;
+    width: 100px;
+    line-height: 20px;
+    text-align: center;
+}
+
+#pet-name {
+    font-family: 'Englebert', sans-serif;
+    padding: 5px;
+}
