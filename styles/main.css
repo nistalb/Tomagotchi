@@ -54,3 +54,8 @@ li {
     position: absolute;
     visibility: visible;
 }
+
+img {
+    width: 700px;
+    height: 500px;
+}
