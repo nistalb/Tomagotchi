@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+body {
+    font-family: 'Englebert', sans-serif;
+    text-align: center;
+}
+
+header {
+    background-color: azure;
+    height: 70px;
+}
+
+h1 {
+    color: red;
+    padding: 10px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    display: inline;
+    padding: 30px;
+}
+
+#gamespace {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-screen {
+    align-self: center;
+    background-color: blanchedalmond;
+    height: 100px;
+    width: 90px;
+    line-height: 60px;
+    position: absolute;
+    visibility: hidden;
+}
+
+#notice-screen {
+    align-self: center;
+    background-color: blanchedalmond;
+    height: 100px;
+    width: 90px;
+    line-height: 60px;
+    position: absolute;
+    visibility: visible;
+}
