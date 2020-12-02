@@ -11,7 +11,7 @@ let $startButton = $("<button id = 'start'>Start Game</button>")
 $("#notice-screen").append($startButton);
 
 //initialize the image on the game-screen
-let $egg = $("<img id='baby' src = 'https://www.aurorawings.com/uploads/9/3/5/0/9350138/s175561970794400002_p621_i210_w798.jpeg' alt = 'baby unicorn'>");
+let $egg = $("<img id='baby' src = 'https://www.aurorawings.com/uploads/9/3/5/0/9350138/s175561970794400002_p621_i210_w798.jpeg' alt = 'baby'>");
 $("#game-screen").append($egg);
 
 
@@ -160,6 +160,25 @@ const adultPet = function adultPet() {
     setTimer(interval)
     }
 
+const deadPet = function deadPet() {
+    $("#notice-screen").text("");
+    $("#notice-screen").append(`${petName} has died!`);
+    switchScreens();
+
+    let $dead = $("<img id='dead' src = 'https://www.deccanherald.com/sites/dh/files/styles/article_detail/public/articleimages/2020/07/12/dead-1594574777.jpg?itok=yxQ8zz2z' alt = 'teen'>");
+
+    $("#game-screen img:last-child").remove();
+    $("#game-screen").append($dead);
+    let $resetButton = $("<button>Reset Game</button>");
+    $("#game-screen").append($resetButton);
+    delayTimer(switchScreens, 3);
+    $resetButton.on("click", function () {
+        document.location.reload()
+    })
+    
+
+}
+
 
 
 const playGame = function playGame (){
@@ -168,26 +187,43 @@ const playGame = function playGame (){
         babyPet ();
         time = 10;
     }  else if (lifecycle === 2) {
-        console.log("child")
         $("#notice-screen").text("");
         $("#notice-screen").append(`${petName} has become a child!`);
         switchScreens();
-        let $child = $("<img id='child' src = 'https://gradepowerlearning.com/wp-content/uploads/2018/06/what-type-of-learner-is-your-child-min-860x420.jpeg' alt = 'baby unicorn'>");
+
+        let $child = $("<img id='child' src = 'https://gradepowerlearning.com/wp-content/uploads/2018/06/what-type-of-learner-is-your-child-min-860x420.jpeg' alt = 'child'>");
+
         $("#game-screen img:last-child").remove();
         $("#game-screen").append($child);
         delayTimer(switchScreens, 3);
         delayTimer(childPet, 2);
         time = 10;
     }  else if (lifecycle === 3) {
-        console.log('teen');
-        teenPet();
+        $("#notice-screen").text("");
+        $("#notice-screen").append(`${petName} has become a teen!`);
+        switchScreens();
+
+        let $teen = $("<img id='teen' src = 'https://ggsc.s3.amazonaws.com/images/made/images/uploads/How_to_Get_Teen_Boys_to_Open_Up_300_200_int_c1-1x.jpg' alt = 'teen'>");
+
+        $("#game-screen img:last-child").remove();
+        $("#game-screen").append($teen);
+        delayTimer(switchScreens, 3);
+        delayTimer(teenPet, 2);
         time = 10;
     }   else if (lifecycle === 4) {
-        console.log("adult");
-        adultPet();
+        $("#notice-screen").text("");
+        $("#notice-screen").append(`${petName} has become an Adult!`);
+        switchScreens();
+
+        let $adult = $("<img id='adult' src = 'http://www.jovanortho.com/common/pages/UserFile.aspx?fileId=69074' alt = 'adult'>");
+
+        $("#game-screen img:last-child").remove();
+        $("#game-screen").append($adult);
+        delayTimer(switchScreens, 3);
+        delayTimer(adultPet, 2);
         time =10;
     } else {
-        console.log ("dead pet")
+        deadPet();
     } 
 }
 

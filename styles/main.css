@@ -28,6 +28,15 @@ li {
     padding: 30px;
 }
 
+button {
+    font-family: 'Englebert', sans-serif;
+    margin: 5px;
+    padding: 5px;
+    height: 30px;
+    width: 50px;
+    cursor: pointer;
+}
+
 #gamespace {
     height: 80vh;
     display: flex;
@@ -53,6 +62,7 @@ li {
     line-height: 60px;
     position: absolute;
     visibility: visible;
+    font-size: 3em;
 }
 
 #game-buttons{
@@ -62,15 +72,6 @@ li {
     width: 200;
     line-height: 20px;
     text-align: center;    
-}
-
-#game-buttons button{
-    font-family: 'Englebert', sans-serif;
-    margin: 5px;
-    padding: 5px;
-    height: 30px;
-    width: 50px;
-    cursor: pointer;
 }
 
 #start {
@@ -88,14 +89,13 @@ img {
     height: 500px;
 }
 
-
-
 #pet-name {
     font-family: 'Englebert', sans-serif;
+    width: 200px;
     padding: 5px;
 }
 
-#baby, #child {
+#baby, #child, #teen, #adult, #dead {
     width: 300px;
     height: 300px;
     transition: all 0.2s ease-in-out;
