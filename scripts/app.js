@@ -40,9 +40,26 @@ const getName = function getName() {
     });
 };
 
-//this function will create a timer for the various elements of hte game
-
+//this function will create a delay timer for switching screens
 const delayTimer = function delayTimer(seconds){
     setTimeout(switchScreens, seconds * 1000);
+}
+
+//this function increments hunger
+const incrementHunger = function incrementHunger(hunger){
+    hunger++;
+    $("#hunger").text(`Hunger: ${hunger}`);  
+}
+
+//this function increments sleepiness
+const incrementSleepiness = function incrementSleepiness(sleep){
+    sleep++;
+    $("#sleepiness").text(`Sleepiness: ${sleep}`);  
+}
+
+//this function increments boredom
+const incrementBoredom = function incrementBoredom(bored){
+    bored++;
+    $("#boredom").text(`Boredom: ${bored}`);  
 }
 
