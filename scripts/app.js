@@ -48,7 +48,12 @@ const delayTimer = function delayTimer(seconds){
 //this function increments hunger
 const incrementHunger = function incrementHunger(hunger){
     hunger++;
-    $("#hunger").text(`Hunger: ${hunger}`);  
+    $("#hunger").text(hunger);  
+}
+
+const decrementHunger = function decrementHunger(hunger){
+    hunger--;
+    $("#hunger").text(hunger);  
 }
 
 //this function increments sleepiness
@@ -57,9 +62,21 @@ const incrementSleepiness = function incrementSleepiness(sleep){
     $("#sleepiness").text(`Sleepiness: ${sleep}`);  
 }
 
+const decrementSleepiness = function decrementSleepiness(sleep){
+    sleep--;
+    $("#sleepiness").text(`Sleepiness: ${sleep}`);  
+}
+
 //this function increments boredom
 const incrementBoredom = function incrementBoredom(bored){
     bored++;
     $("#boredom").text(`Boredom: ${bored}`);  
 }
+
+const decrementBoredom = function decrementBoredom(bored){
+    bored--;
+    $("#boredom").text(`Boredom: ${bored}`);  
+}
+
+
 
