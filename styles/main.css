@@ -38,8 +38,8 @@ li {
 #game-screen {
     align-self: center;
     background-color: blanchedalmond;
-    height: 100px;
-    width: 90px;
+    height: 300px;
+    width: 500px;
     line-height: 60px;
     position: absolute;
     visibility: hidden;
@@ -48,8 +48,8 @@ li {
 #notice-screen {
     align-self: center;
     background-color: blanchedalmond;
-    height: 100px;
-    width: 90px;
+    height: 300px;
+    width: 500px;
     line-height: 60px;
     position: absolute;
     visibility: visible;

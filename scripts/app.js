@@ -24,4 +24,11 @@ const switchScreens = function(){
 }
 
 //this function will collect name
+let gotchiName = "";
 
+const getName = function getName() {
+    $("#notice-screen").append("<input><button id = 'pet-name'>Enter your pet's name</button></input>");
+    
+    //$("#notice-screen").append($getName);
+    //gotchiName = $getName.value;
+}
