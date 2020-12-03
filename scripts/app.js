@@ -2,9 +2,10 @@
 let hunger = 0;
 let bored = 0;
 let sleep = 0;
-let lifecycle = 1;
+let lifecycle = 0;
 let petName = "";
-let time = 120;
+let time = 10;
+let age = ["a Baby", "a Child", " a Teenager", "an Adult", "dead"];
 
 
 //initialize the image on the game-screen
@@ -122,7 +123,6 @@ const decrementBoredom = function decrementBoredom(){
 //sets the time for the game and executes time based actions
     const setTimer = function setTimer(interval){
         const updateTime = function updateTime(){
-            //$("#time").text(time);   not used at this time
             time--;
             if(time % interval === 0){
                 incrementBoredom();
@@ -149,6 +149,9 @@ const babyPet = function babyPet() {
     bored = 0;
     sleep = 0;
     interval = 5;
+    time = 10;
+
+    $("#header_string").text(`${petName} is ${age[lifecycle]}`);
 
     setTimer(interval)
     }
@@ -158,7 +161,18 @@ const childPet = function childPet() {
     bored = 0;
     sleep = 0;
     interval = 7;
-    
+    time = 10;
+
+    $("#notice-screen").text("");
+    $("#notice-screen").append(`${petName} has become ${age[lifecycle]}!`);
+    switchScreens();
+
+    let $child = $("<img id='child-img' src = 'https://gradepowerlearning.com/wp-content/uploads/2018/06/what-type-of-learner-is-your-child-min-860x420.jpeg' alt = 'child'>");
+
+    $("#game-screen img:last-child").remove();
+    $("#game-screen").append($child);
+    delayTimer(switchScreens, 3);
+    $("#header_string").text(`${petName} is ${age[lifecycle]}`);
     setTimer(interval)
     }
 
@@ -167,7 +181,18 @@ const teenPet = function teenPet() {
     bored = 0;
     sleep = 0;
     interval = 6;
+    time = 10;
     
+    $("#notice-screen").text("");
+    $("#notice-screen").append(`${petName} has become ${age[lifecycle]}!`);
+    switchScreens();
+
+    let $teen = $("<img id='teen-img' src = 'https://ggsc.s3.amazonaws.com/images/made/images/uploads/How_to_Get_Teen_Boys_to_Open_Up_300_200_int_c1-1x.jpg' alt = 'teen'>");
+
+    $("#game-screen img:last-child").remove();
+    $("#game-screen").append($teen);
+    delayTimer(switchScreens, 3);
+    $("#header_string").text(`${petName} is ${age[lifecycle]}`);
     setTimer(interval)
     }
 
@@ -176,13 +201,24 @@ const adultPet = function adultPet() {
     bored = 0;
     sleep = 0;
     interval = 8;
+    time = 10;
     
+    $("#notice-screen").text("");
+    $("#notice-screen").append(`${petName} has become ${age[lifecycle]}!`);
+    switchScreens();
+
+    let $adult = $("<img id='adult-img' src = 'http://www.jovanortho.com/common/pages/UserFile.aspx?fileId=69074' alt = 'adult'>");
+
+    $("#game-screen img:last-child").remove();
+    $("#game-screen").append($adult);
+    delayTimer(switchScreens, 3);
+    $("#header_string").text(`${petName} is ${age[lifecycle]}`);
     setTimer(interval)
     }
 
 const deadPet = function deadPet() {
     $("#notice-screen").text("");
-    $("#notice-screen").append(`${petName} has died!`);
+    $("#notice-screen").append(`${petName} is ${age[lifecycle]}!`);
     switchScreens();
 
     let $dead = $("<img id='dead-img' src = 'https://www.deccanherald.com/sites/dh/files/styles/article_detail/public/articleimages/2020/07/12/dead-1594574777.jpg?itok=yxQ8zz2z' alt = 'teen'>");
@@ -192,52 +228,25 @@ const deadPet = function deadPet() {
     let $resetButton = $("<button>Reset Game</button>");
     $("#game-screen").append($resetButton);
     delayTimer(switchScreens, 3);
+    $("#header_string").text(`${petName} is ${age[lifecycle]}`);
     $resetButton.on("click", function () {
         document.location.reload()
     })
 }
 
 const playGame = function playGame (){
-    if (lifecycle === 1) {
-        console.log("baby");
+    if (lifecycle === 0) {
         babyPet ();
-        time = 120;
+        
+    }  else if (lifecycle === 1) {
+        childPet()
+        
     }  else if (lifecycle === 2) {
-        $("#notice-screen").text("");
-        $("#notice-screen").append(`${petName} has become a child!`);
-        switchScreens();
-
-        let $child = $("<img id='child-img' src = 'https://gradepowerlearning.com/wp-content/uploads/2018/06/what-type-of-learner-is-your-child-min-860x420.jpeg' alt = 'child'>");
-
-        $("#game-screen img:last-child").remove();
-        $("#game-screen").append($child);
-        delayTimer(switchScreens, 3);
-        delayTimer(childPet, 2);
-        time = 120;
-    }  else if (lifecycle === 3) {
-        $("#notice-screen").text("");
-        $("#notice-screen").append(`${petName} has become a teen!`);
-        switchScreens();
-
-        let $teen = $("<img id='teen-img' src = 'https://ggsc.s3.amazonaws.com/images/made/images/uploads/How_to_Get_Teen_Boys_to_Open_Up_300_200_int_c1-1x.jpg' alt = 'teen'>");
-
-        $("#game-screen img:last-child").remove();
-        $("#game-screen").append($teen);
-        delayTimer(switchScreens, 3);
-        delayTimer(teenPet, 2);
-        time = 120;
-    }   else if (lifecycle === 4) {
-        $("#notice-screen").text("");
-        $("#notice-screen").append(`${petName} has become an Adult!`);
-        switchScreens();
-
-        let $adult = $("<img id='adult-img' src = 'http://www.jovanortho.com/common/pages/UserFile.aspx?fileId=69074' alt = 'adult'>");
-
-        $("#game-screen img:last-child").remove();
-        $("#game-screen").append($adult);
-        delayTimer(switchScreens, 3);
-        delayTimer(adultPet, 2);
-        time =120;
+       teenPet();
+    
+    }   else if (lifecycle === 3) {
+        adultPet();
+        
     } else {
         deadPet();
     } 

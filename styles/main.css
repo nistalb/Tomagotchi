@@ -7,25 +7,37 @@
 body {
     font-family: 'Englebert', sans-serif;
     text-align: center;
+    background-color: azure;
 }
 
 header {
-    background-color: azure;
-    height: 70px;
+    height: 100%;
 }
 
 h1 {
-    color: red;
-    padding: 10px;
+    color: orange;
+    padding: 15px;
+    margin: 10px;
+    font-size: 4em;
+}
+
+#header_string {
+    padding-bottom: 15px;
+    line-height: 100%;
+    text-align: center;
 }
 
 ul {
     list-style-type: none;
+    line-height: 100%;
+    margin-bottom: 10px;
 }
 
 li {
+    font-size: 1.5em;
     display: inline;
-    padding: 30px;
+    padding: 10px 30px 10px 30px;
+    color: #b37514;
 }
 
 button {
@@ -38,34 +50,60 @@ button {
 }
 
 #gamespace {
-    height: 100%;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: blue;
+}
+
+#frame {
+    width: 400px;
+    height: 550px;
+    border-radius: 50%;
+    position: absolute;
+    -webkit-box-shadow: 14px 17px 19px 3px rgba(28,145,191,0.66);
+    -moz-box-shadow: 14px 17px 19px 3px rgba(28,145,191,0.66);
+    box-shadow: 14px 17px 19px 3px rgba(28,145,191,0.66);
 }
 
 #game-screen {
     margin: auto;
-    background-color: blanchedalmond;
+    background-color: #A8C64E;
     height: 350px;
     width: 250px;
     line-height: 60px;
     position: absolute;
     visibility: hidden;
     border-radius: 20px;
+    -webkit-box-shadow: inset 10px 10px 29px 0px rgba(0,0,0,0.6);
+    -moz-box-shadow: inset 10px 10px 29px 0px rgba(0,0,0,0.6);
+    box-shadow: inset 10px 10px 29px 0px rgba(0,0,0,0.6);
 }
 
 #notice-screen {
     margin: auto;
-    background-color: blanchedalmond;
+    background-color: #A8C64E;
     height: 350px;
     width: 250px;
     line-height: 60px;
     position: absolute;
     visibility: visible;
     border-radius: 20px;
+    display: flex;
+    -webkit-box-shadow: inset 10px 10px 29px 0px rgba(0,0,0,0.6);
+    -moz-box-shadow: inset 10px 10px 29px 0px rgba(0,0,0,0.6);
+    box-shadow: inset 10px 10px 29px 0px rgba(0,0,0,0.6);
+}
+
+#start {
+    font-family: 'Englebert', sans-serif;
+    padding: 5px;
+    height: 30px;
+    width: 100px;
+    line-height: 20px;
+    text-align: center;
+    
 }
 
 #game-buttons{
@@ -90,10 +128,7 @@ button {
     text-align: center;
 }
 
-img {
-    width: 500px;
-    height: 100%;
-}
+
 
 #pet-name {
     font-family: 'Englebert', sans-serif;
