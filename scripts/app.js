@@ -1,19 +1,17 @@
-
-let babyfood = ["peas", "creamed corn"];
+/* NOTE global variables */
 let hunger = 0;
 let bored = 0;
 let sleep = 0;
 let lifecycle = 1;
 let petName = "";
+let time = 120;
 
-//create the start button that will begin the game and append to the screen
-let $startButton = $("<button id = 'start'>Start Game</button>")
-$("#notice-screen").append($startButton);
 
 //initialize the image on the game-screen
-let $egg = $("<img id='baby' src = 'https://www.aurorawings.com/uploads/9/3/5/0/9350138/s175561970794400002_p621_i210_w798.jpeg' alt = 'baby'>");
-$("#game-screen").append($egg);
+let $egg = $("<img id='baby-img' src = 'https://www.aurorawings.com/uploads/9/3/5/0/9350138/s175561970794400002_p621_i210_w798.jpeg' alt = 'baby'>");
+$("#game-screen").append($egg); 
 
+/* NOTE Event Listeners */
 
 //create the event listener that will tell when the start button is pushed
 $("#start").on("click", function (event){
@@ -22,6 +20,25 @@ $("#start").on("click", function (event){
     getName();
 })
 
+//this click will feed the pet
+$("#feed").on("click", function (event){
+    console.log("being fed")
+    decrementHunger();
+})
+
+//this click will sleep the pet
+$("#sleep").on("click", function (event){
+    console.log("sleeping")
+    decrementSleepiness();
+})
+
+//this click will play the pet
+$("#play").on("click", function (event){
+    console.log("playing")
+    decrementBoredom();
+})
+
+/* NOTE Functions */
 
 //this will swicth between the game screen and the notice screen
 const switchScreens = function(){
@@ -103,7 +120,6 @@ const decrementBoredom = function decrementBoredom(){
 }
 
 //sets the time for the game and executes time based actions
-let time = 120;
     const setTimer = function setTimer(interval){
         const updateTime = function updateTime(){
             //$("#time").text(time);   not used at this time
@@ -169,7 +185,7 @@ const deadPet = function deadPet() {
     $("#notice-screen").append(`${petName} has died!`);
     switchScreens();
 
-    let $dead = $("<img id='dead' src = 'https://www.deccanherald.com/sites/dh/files/styles/article_detail/public/articleimages/2020/07/12/dead-1594574777.jpg?itok=yxQ8zz2z' alt = 'teen'>");
+    let $dead = $("<img id='dead-img' src = 'https://www.deccanherald.com/sites/dh/files/styles/article_detail/public/articleimages/2020/07/12/dead-1594574777.jpg?itok=yxQ8zz2z' alt = 'teen'>");
 
     $("#game-screen img:last-child").remove();
     $("#game-screen").append($dead);
@@ -191,7 +207,7 @@ const playGame = function playGame (){
         $("#notice-screen").append(`${petName} has become a child!`);
         switchScreens();
 
-        let $child = $("<img id='child' src = 'https://gradepowerlearning.com/wp-content/uploads/2018/06/what-type-of-learner-is-your-child-min-860x420.jpeg' alt = 'child'>");
+        let $child = $("<img id='child-img' src = 'https://gradepowerlearning.com/wp-content/uploads/2018/06/what-type-of-learner-is-your-child-min-860x420.jpeg' alt = 'child'>");
 
         $("#game-screen img:last-child").remove();
         $("#game-screen").append($child);
@@ -203,7 +219,7 @@ const playGame = function playGame (){
         $("#notice-screen").append(`${petName} has become a teen!`);
         switchScreens();
 
-        let $teen = $("<img id='teen' src = 'https://ggsc.s3.amazonaws.com/images/made/images/uploads/How_to_Get_Teen_Boys_to_Open_Up_300_200_int_c1-1x.jpg' alt = 'teen'>");
+        let $teen = $("<img id='teen-img' src = 'https://ggsc.s3.amazonaws.com/images/made/images/uploads/How_to_Get_Teen_Boys_to_Open_Up_300_200_int_c1-1x.jpg' alt = 'teen'>");
 
         $("#game-screen img:last-child").remove();
         $("#game-screen").append($teen);
@@ -215,7 +231,7 @@ const playGame = function playGame (){
         $("#notice-screen").append(`${petName} has become an Adult!`);
         switchScreens();
 
-        let $adult = $("<img id='adult' src = 'http://www.jovanortho.com/common/pages/UserFile.aspx?fileId=69074' alt = 'adult'>");
+        let $adult = $("<img id='adult-img' src = 'http://www.jovanortho.com/common/pages/UserFile.aspx?fileId=69074' alt = 'adult'>");
 
         $("#game-screen img:last-child").remove();
         $("#game-screen").append($adult);
@@ -227,20 +243,3 @@ const playGame = function playGame (){
     } 
 }
 
-//this click will feed the pet
-$("#feed").on("click", function (event){
-    console.log("being fed")
-    decrementHunger();
-})
-
-//this click will sleep the pet
-$("#sleep").on("click", function (event){
-    console.log("sleeping")
-    decrementSleepiness();
-})
-
-//this click will play the pet
-$("#play").on("click", function (event){
-    console.log("playing")
-    decrementBoredom();
-})
