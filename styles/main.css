@@ -52,7 +52,7 @@ button {
 #gamespace {
     height: 80vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
@@ -62,9 +62,9 @@ button {
     height: 550px;
     border-radius: 50%;
     position: absolute;
-    -webkit-box-shadow: 14px 17px 19px 3px rgba(28,145,191,0.66);
-    -moz-box-shadow: 14px 17px 19px 3px rgba(28,145,191,0.66);
-    box-shadow: 14px 17px 19px 3px rgba(28,145,191,0.66);
+    -webkit-box-shadow: 14px 17px 19px 3px rgba(0,0,0,0.6);
+    -moz-box-shadow: 14px 17px 19px 3px rgba(0,0,0,0.6);
+    box-shadow: 14px 17px 19px 3px rgba(0,0,0,0.6);
 }
 
 #game_screen {
@@ -90,6 +90,7 @@ button {
     position: absolute;
     visibility: visible;
     border-radius: 20px;
+    align-self: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -135,16 +136,27 @@ input {
 }
 
 #game-buttons{
-    margin: auto;
+    margin-bottom: 85px;
     padding: 5px;
     height: 30px;
     width: 200;
-    line-height: 20px;
-    text-align: center;    
+    line-height: 20px; 
+    position: absolute;
+    align-self: flex-end;   
 }
 
 #game-buttons button {
+    background-color:black;
+    height: 40px;
+    width: 40px;
     border-radius: 50%;
+    color: azure;
+    font-size: 1.2em;
+    text-align: center;
+    line-height: 35px;
+    -webkit-box-shadow: 6px 4px 23px 0px rgba(0,0,0,0.78);
+    -moz-box-shadow: 6px 4px 23px 0px rgba(0,0,0,0.78);
+    box-shadow: 6px 4px 23px 0px rgba(0,0,0,0.78);
 }
 
 .message {
