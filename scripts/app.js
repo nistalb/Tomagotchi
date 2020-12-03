@@ -103,15 +103,19 @@ const decrementBoredom = function decrementBoredom(){
 }
 
 //sets the time for the game and executes time based actions
-let time = 10;
+let time = 120;
     const setTimer = function setTimer(interval){
         const updateTime = function updateTime(){
-            $("#time").text(time);
+            //$("#time").text(time);   not used at this time
             time--;
             if(time % interval === 0){
                 incrementBoredom();
                 incrementHunger();
                 incrementSleepiness();
+            }
+            if (hunger === 10 || bored === 10 || sleep === 10) {
+                deadPet();
+                clearInterval(timer);
             }
             if (time <= 0){
                 clearInterval(timer);
@@ -175,17 +179,13 @@ const deadPet = function deadPet() {
     $resetButton.on("click", function () {
         document.location.reload()
     })
-    
-
 }
-
-
 
 const playGame = function playGame (){
     if (lifecycle === 1) {
         console.log("baby");
         babyPet ();
-        time = 10;
+        time = 120;
     }  else if (lifecycle === 2) {
         $("#notice-screen").text("");
         $("#notice-screen").append(`${petName} has become a child!`);
@@ -197,7 +197,7 @@ const playGame = function playGame (){
         $("#game-screen").append($child);
         delayTimer(switchScreens, 3);
         delayTimer(childPet, 2);
-        time = 10;
+        time = 120;
     }  else if (lifecycle === 3) {
         $("#notice-screen").text("");
         $("#notice-screen").append(`${petName} has become a teen!`);
@@ -209,7 +209,7 @@ const playGame = function playGame (){
         $("#game-screen").append($teen);
         delayTimer(switchScreens, 3);
         delayTimer(teenPet, 2);
-        time = 10;
+        time = 120;
     }   else if (lifecycle === 4) {
         $("#notice-screen").text("");
         $("#notice-screen").append(`${petName} has become an Adult!`);
@@ -221,7 +221,7 @@ const playGame = function playGame (){
         $("#game-screen").append($adult);
         delayTimer(switchScreens, 3);
         delayTimer(adultPet, 2);
-        time =10;
+        time =120;
     } else {
         deadPet();
     } 
