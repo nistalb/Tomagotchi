@@ -67,7 +67,7 @@ button {
     box-shadow: 14px 17px 19px 3px rgba(28,145,191,0.66);
 }
 
-#game-screen {
+#game_screen {
     margin: auto;
     background-color: #A8C64E;
     height: 350px;
@@ -81,7 +81,7 @@ button {
     box-shadow: inset 10px 10px 29px 0px rgba(0,0,0,0.6);
 }
 
-#notice-screen {
+#notice_screen {
     margin: auto;
     background-color: #A8C64E;
     height: 350px;
@@ -91,19 +91,47 @@ button {
     visibility: visible;
     border-radius: 20px;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     -webkit-box-shadow: inset 10px 10px 29px 0px rgba(0,0,0,0.6);
     -moz-box-shadow: inset 10px 10px 29px 0px rgba(0,0,0,0.6);
     box-shadow: inset 10px 10px 29px 0px rgba(0,0,0,0.6);
 }
 
-#start {
+#start_button {
     font-family: 'Englebert', sans-serif;
     padding: 5px;
-    height: 30px;
-    width: 100px;
-    line-height: 20px;
+    height: 60px;
+    width: 130px;
+    line-height: 60px;
     text-align: center;
-    
+    background-color: #3C412C;
+    color: azure;
+    font-size: 1.5em;
+    border-radius: 5px;
+}
+
+input {
+    background-color: azure;
+    height: 50px;
+    width: 200px;
+    line-height: 60px;
+    font-size: 1.5em;
+    text-align: center;
+    font-family: 'Englebert', sans-serif;
+    color: #3C412C;
+}
+#pet-name {
+    font-family: 'Englebert', sans-serif;
+    height: 50px;
+    width: 200px;
+    padding: 5px;
+    line-height: 50px;
+    background-color: #3C412C;
+    color: azure;
+    font-size: 1.2em;
+    border-radius: 5px;
 }
 
 #game-buttons{
@@ -119,21 +147,10 @@ button {
     border-radius: 50%;
 }
 
-#start {
-    font-family: 'Englebert', sans-serif;
-    padding: 5px;
-    height: 30px;
-    width: 100px;
-    line-height: 20px;
-    text-align: center;
-}
-
-
-
-#pet-name {
-    font-family: 'Englebert', sans-serif;
-    width: 200px;
-    padding: 5px;
+.message {
+    color:#3C412C;
+    font-size: 1.3em;
+    line-height: 17px;
 }
 
 #baby-img {
