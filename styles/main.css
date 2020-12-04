@@ -64,7 +64,7 @@ button {
 #frame {
     width: 400px;
     height: 550px;
-    border-radius: 35%;
+    border-radius: 50%;
     position: absolute;
     -webkit-box-shadow: 14px 17px 19px 3px rgba(0,0,0,0.6);
     -moz-box-shadow: 14px 17px 19px 3px rgba(0,0,0,0.6);
