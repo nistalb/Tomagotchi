@@ -17,14 +17,14 @@ $("#start_button").on("click", function (event){
     getName();
 })
 
-//this click will feed the pet
+//create an event listner for the feed button, and intiate decremetHunger and feedTime functions
 $("#feed").on("click", function (event){
     console.log("being fed")
     decrementHunger();
     feedTime();
 })
 
-//this click will sleep the pet
+//create an event listner for the sleep button, and intiate decremetSleepiness and sleepTime functions
 $("#sleep").on("click", function (event){
     console.log("sleeping")
     decrementSleepiness();
@@ -32,7 +32,7 @@ $("#sleep").on("click", function (event){
 
 })
 
-//this click will entertain the pet
+//create an event listner for the play button, and intiate decremetBoredom and playTime functions
 $("#play").on("click", function (event){
     console.log("playing")
     decrementBoredom();
@@ -41,7 +41,9 @@ $("#play").on("click", function (event){
 
 /* NOTE Functions */
 
-//this will swicth between the game screen and the notice screen
+/**
+ * Toggles between the game screen and the notice screen. Whichever screen is active will be replaced by the other screen.
+ */
 const switchScreens = function(){
     let $noticeScreen = $("#notice_screen");
     let $gameScreen = $("#game_screen")
@@ -54,7 +56,9 @@ const switchScreens = function(){
     }    
 }
 
-//this function will collect pets name and print onto the screen
+/**
+ * Appends an input and button to the notice screen.  Adds an event listener for the added button that will add a paragraph to the notice screen that the pet has been born.
+ */
 const getName = function getName() {
     let $name = $("<input><button id = 'pet-name'>Enter your pet's name</button></input>")
     $("#notice_screen").append($name);
@@ -68,16 +72,26 @@ const getName = function getName() {
 };
 
 //this function will create a delay timer for switching screens
+/**
+ * Creates a delay prior to executing a function
+ * @param {function} funct the function to be delayed
+ * @param {number} seconds the amound of time in seconds to delay
+ */
 const delayTimer = function delayTimer(funct, seconds){
     setTimeout(funct, seconds * 1000);
 }
 
-//this function increments hunger
+/**
+ * Increments the hunger variable up by one and updates the text of the span displayed in the header with id hunger with the new value of hunger
+ */
 const incrementHunger = function incrementHunger(){
     hunger++;
     $("#hunger").text(hunger);  
 }
 
+/**
+ * Decrements the hunger variable by 3 and updates the text of the span displayed in the header with id hunger with the new value of hunger
+ */
 const decrementHunger = function decrementHunger(){
     hunger = hunger - 3;
     if (hunger > 0) {
@@ -88,12 +102,17 @@ const decrementHunger = function decrementHunger(){
     }
 }
 
-//this function increments sleepiness
+/**
+ * Increments the sleep variable up by one and updates the text of the span displayed in the header with id sleepiness with the new value of sleep
+ */
 const incrementSleepiness = function incrementSleepiness(){
     sleep++;
     $("#sleepiness").text(sleep);  
 }
 
+/**
+ * Decrements the sleep variable by 5 and updates the text of the span displayed in the header with id sleepiness with the new value of sleep
+ */
 const decrementSleepiness = function decrementSleepiness(){
     sleep = sleep - 5;
     if (sleep > 0) {
@@ -104,12 +123,17 @@ const decrementSleepiness = function decrementSleepiness(){
     } 
 }
 
-//this function increments boredom
+/**
+ * Increments the bored variable up by one and updates the text of the span displayed in the header with id boredom with the new value of bored
+ */
 const incrementBoredom = function incrementBoredom(){
     bored++;
     $("#boredom").text(bored);  
 }
 
+/**
+ * Decrements the bored variable by 4 and updates the text of the span displayed in the header with id boredom with the new value of bored
+ */
 const decrementBoredom = function decrementBoredom(){
     bored = bored - 4;
     if (bored > 0) {
@@ -120,21 +144,26 @@ const decrementBoredom = function decrementBoredom(){
     }
 }
 
-//this function will feed the pet
+/**
+ * Plays audio of eating sounds
+ */
     const feedTime = function feedTime(){
         let audio = document.getElementById("audio");
         audio.play();
     }
 
-//this function will sleep the pet
+/**
+ * Adds a class to the div that holds the pet image.  With the added class CSS displays an image that does not have animation.  the changed image lasts for three seconds. 
+ */
     const sleepTime = function sleepTime(){
         let $sleeper = $("#game_screen div");
-        console.log($sleeper);
         $sleeper.attr("class", "sleep");
         setTimeout(() => $sleeper.removeClass("sleep"), 3000);
     }
 
-//this function will entertain the pet
+/**
+ * Clones the child element of game_screen and saves it.  Then removes the child element and replaces it with another element that has a different Id, thereby calling a new CSS animation.  The new animation plays for 3 seconds and then is replaced by the saved cloned element. 
+ */
 const playTime = function playTime(){
     if (lifecycle === 0){
         let $player = $("#game_screen div");
@@ -184,7 +213,11 @@ const playTime = function playTime(){
     }
 }
 
-//sets the time for the game and executes time based actions
+/**
+ * Executes the timing for the game.  Counts down the time variable every second.  Calls functions incrementBoredom, incrementHunber, and incrementSleepiness after a given interval.  Monitors the status of hunger, bored, and sleep variables and executes the deadPet function if any of the variables reach 10.  
+ * When time has reached zero the pet lifecyle will increment and the game will continue until all lifecycles have been reached.
+ * @param {number} interval the time value used to increment hunger, boredom, and sleepiness
+ */
     const setTimer = function setTimer(interval){
         const updateTime = function updateTime(){
             time--;
@@ -208,6 +241,9 @@ const playTime = function playTime(){
         const timer = setInterval(updateTime, 1000);
 }
 
+/**
+ * Sets variables for the babyPet, updates the header_string with text, and calls the setTimer function
+ */
 const babyPet = function babyPet() {
     hunger = 0;
     bored = 0;
@@ -220,6 +256,9 @@ const babyPet = function babyPet() {
     setTimer(interval)
     }
 
+/**
+ * Sets variables for the childPet, cleares the notice_screen text and replaces it with new text, then switches screens so that the notice screen is visible.  While the notice screen is visibler the image of the pet is being added to the game_screen.  After three seconds of notice screen the game screen with hte pet will become visible and header_string will update.  Lastly, calls the setTimer function
+ */
 const childPet = function childPet() {
     hunger = 0;
     bored = 0;
@@ -293,6 +332,9 @@ const deadPet = function deadPet() {
     })
 }
 
+/**
+ * Cycles through the game based on lifcycle
+ */
 const playGame = function playGame (){
     if (lifecycle === 0) {
         babyPet ();
