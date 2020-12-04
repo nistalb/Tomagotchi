@@ -8,10 +8,6 @@ let time = 10;
 let age = ["a Baby", "a Child", " a Teenager", "an Adult", "dead"];
 
 
-//initialize the image on the game_screen
-let $egg = $("<img id='baby-img' src = 'https://www.aurorawings.com/uploads/9/3/5/0/9350138/s175561970794400002_p621_i210_w798.jpeg' alt = 'baby'>");
-$("#game_screen").append($egg); 
-
 /* NOTE Event Listeners */
 
 //create the event listener that will tell when the start button is pushed
@@ -167,10 +163,9 @@ const childPet = function childPet() {
     $("#notice_screen").append(`<p class = "message">${petName} has become ${age[lifecycle]}!</p>`);
     switchScreens();
 
-    let $child = $("<img id='child-img' src = 'https://gradepowerlearning.com/wp-content/uploads/2018/06/what-type-of-learner-is-your-child-min-860x420.jpeg' alt = 'child'>");
-
-    $("#game_screen img:last-child").remove();
-    $("#game_screen").append($child);
+    let $child = $("#baby_img");
+    $child.attr("id", "child_img");
+    
     delayTimer(switchScreens, 3);
     $("#header_string").text(`${petName} is ${age[lifecycle]}`);
     setTimer(interval)
@@ -187,10 +182,9 @@ const teenPet = function teenPet() {
     $("#notice_screen").append(`<p class = "message">${petName} has become ${age[lifecycle]}!</p>`);
     switchScreens();
 
-    let $teen = $("<img id='teen-img' src = 'https://ggsc.s3.amazonaws.com/images/made/images/uploads/How_to_Get_Teen_Boys_to_Open_Up_300_200_int_c1-1x.jpg' alt = 'teen'>");
-
-    $("#game_screen img:last-child").remove();
-    $("#game_screen").append($teen);
+    let $teen = $("#child_img");
+    $teen.attr("id", "teen_img");
+   
     delayTimer(switchScreens, 3);
     $("#header_string").text(`${petName} is ${age[lifecycle]}`);
     setTimer(interval)
@@ -207,10 +201,9 @@ const adultPet = function adultPet() {
     $("#notice_screen").append(`<p class = "message">${petName} has become ${age[lifecycle]}!</p>`);
     switchScreens();
 
-    let $adult = $("<img id='adult-img' src = 'http://www.jovanortho.com/common/pages/UserFile.aspx?fileId=69074' alt = 'adult'>");
-
-    $("#game_screen img:last-child").remove();
-    $("#game_screen").append($adult);
+    let $adult = $("#teen_img");
+    $adult.attr("id", "adult_img");
+    console.log($adult);
     delayTimer(switchScreens, 3);
     $("#header_string").text(`${petName} is ${age[lifecycle]}`);
     setTimer(interval)
@@ -221,10 +214,9 @@ const deadPet = function deadPet() {
     $("#notice_screen").append(`<p class = "message">${petName} is ${age[lifecycle]}!</p>`);
     switchScreens();
 
-    let $dead = $("<img id='dead-img' src = 'https://www.deccanherald.com/sites/dh/files/styles/article_detail/public/articleimages/2020/07/12/dead-1594574777.jpg?itok=yxQ8zz2z' alt = 'teen'>");
-
-    $("#game_screen img:last-child").remove();
-    $("#game_screen").append($dead);
+    let $dead = $("#adult_img");
+    $dead.attr("id", "dead_img");
+    console.log($dead);
     let $resetButton = $("<button>Reset Game</button>");
     $("#game_screen").append($resetButton);
     delayTimer(switchScreens, 3);
