@@ -163,8 +163,8 @@ const childPet = function childPet() {
     $("#notice_screen").append(`<p class = "message">${petName} has become ${age[lifecycle]}!</p>`);
     switchScreens();
 
-    let $child = $("#baby_img");
-    $child.attr("id", "child_img");
+    let $pet = $("#baby_img");
+    $pet.attr("id", "child_img");
     
     delayTimer(switchScreens, 3);
     $("#header_string").text(`${petName} is ${age[lifecycle]}`);
@@ -182,8 +182,8 @@ const teenPet = function teenPet() {
     $("#notice_screen").append(`<p class = "message">${petName} has become ${age[lifecycle]}!</p>`);
     switchScreens();
 
-    let $teen = $("#child_img");
-    $teen.attr("id", "teen_img");
+    let $pet = $("#child_img");
+    $pet.attr("id", "teen_img");
    
     delayTimer(switchScreens, 3);
     $("#header_string").text(`${petName} is ${age[lifecycle]}`);
@@ -201,9 +201,8 @@ const adultPet = function adultPet() {
     $("#notice_screen").append(`<p class = "message">${petName} has become ${age[lifecycle]}!</p>`);
     switchScreens();
 
-    let $adult = $("#teen_img");
-    $adult.attr("id", "adult_img");
-    console.log($adult);
+    let $pet = $("#teen_img");
+    $pet.attr("id", "adult_img");
     delayTimer(switchScreens, 3);
     $("#header_string").text(`${petName} is ${age[lifecycle]}`);
     setTimer(interval)
@@ -214,9 +213,9 @@ const deadPet = function deadPet() {
     $("#notice_screen").append(`<p class = "message">${petName} is ${age[lifecycle]}!</p>`);
     switchScreens();
 
-    let $dead = $("#adult_img");
-    $dead.attr("id", "dead_img");
-    console.log($dead);
+    let $pet = $("#adult_img");
+    $pet.attr("id", "dead_img");
+    
     let $resetButton = $("<button>Reset Game</button>");
     $("#game_screen").append($resetButton);
     delayTimer(switchScreens, 3);

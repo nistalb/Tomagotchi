@@ -186,6 +186,42 @@ img {
     animation-iteration-count: infinite;
 }
 
+
+
+#child_img {
+    background: url('people.png') no-repeat -10px -206px;
+	width: 31px;
+    height: 40px;
+    zoom: 4;
+    animation: shake 1s;
+    animation-iteration-count: infinite;
+}
+
+#teen_img {
+    background: url('people.png') no-repeat -91px -206px;
+	width: 43px;
+    height: 40px;
+    zoom: 4;
+    animation: shake 1s;
+    animation-iteration-count: infinite;
+}
+
+#adult_img {
+    background: url('people.png') no-repeat -440px -205px;
+	width: 46px;
+    height: 42px;
+    zoom: 4;
+    animation: shake 1s;
+    animation-iteration-count: infinite;
+}
+
+#dead_img {
+    background: url('people.png') no-repeat -174px -378px;
+	width: 51px;
+    height: 19px;
+    zoom: 4;
+}
+
 @keyframes shake {
     0% { transform: translate(1px, 1px) rotate(0deg); }
     10% { transform: translate(-1px, -2px) rotate(-1deg); }
@@ -199,37 +235,3 @@ img {
     90% { transform: translate(1px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
   }
-
-#child_img {
-    background: url('people.png') no-repeat -10px -206px;
-	width: 31px;
-    height: 40px;
-    zoom: 4;
-    animation: shake 1s;
-    animation-iteration-count: infinite;
-}
-
-#teen_img {
-    background: url('people.png') no-repeat -10px -206px;
-	width: 31px;
-    height: 40px;
-    zoom: 4;
-    animation: shake 1s;
-    animation-iteration-count: infinite;
-}
-
-#adult-img {
-    background: url('people.png') no-repeat -10px -206px;
-	width: 31px;
-    height: 40px;
-    zoom: 4;
-    animation: shake 1s;
-    animation-iteration-count: infinite;
-}
-
-#dead-img {
-    background: url('people.png') no-repeat -10px -206px;
-	width: 31px;
-    height: 40px;
-    zoom: 4;
-}
