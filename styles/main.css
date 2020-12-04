@@ -198,6 +198,17 @@ img {
     animation: none;
 }
 
+#baby_play {
+    background: url('yeti.png') no-repeat -347px -90px;
+	width: 66px;
+	height: 68px;
+    zoom: 2;
+    animation-name: youngplay;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+}
+
 #child_img {
     background: url('yeti.png') no-repeat -826px -13px;
 	width: 61px;
@@ -213,6 +224,17 @@ img {
 	height: 68px;
     zoom: 2.5;
     animation: none;
+}
+
+#child_play {
+    background: url('yeti.png') no-repeat -826px -13px;
+	width: 61px;
+	height: 68px;
+    zoom: 2.5;
+    animation-name: youngplay;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
 }
 
 #teen_img {
@@ -233,6 +255,17 @@ img {
     
 }
 
+#teen_play {
+    background: url('yeti.png') no-repeat -159px -170px;
+	width: 158px;
+	height: 149px;
+    zoom: 1.2;
+    animation-name: youngplay;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+}
+
 #adult_img {
     background: url('yeti.png') no-repeat -323px -331px;
 	width: 153px;
@@ -248,6 +281,17 @@ img {
 	height: 148px;
     zoom: 1.5;
     animation: none;
+}
+
+#adult_play {
+    background: url('yeti.png') no-repeat -323px -331px;
+	width: 153px;
+	height: 148px;
+    zoom: 1.5;
+    animation-name: youngplay;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
 }
 
 #dead_img {
@@ -269,4 +313,13 @@ img {
     80% { transform: translate(-1px, -1px) rotate(1deg); }
     90% { transform: translate(1px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+  @keyframes youngplay {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
   }

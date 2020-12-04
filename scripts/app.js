@@ -10,7 +10,7 @@ let age = ["a Baby", "a Child", " a Teenager", "an Adult", "dead"];
 
 /* NOTE Event Listeners */
 
-//create the event listener that will tell when the start button is pushed
+//create an event listener for the start button, and initiate getName function 
 $("#start_button").on("click", function (event){
     console.log("the game is starting")
     $("#start_button").remove();
@@ -21,6 +21,7 @@ $("#start_button").on("click", function (event){
 $("#feed").on("click", function (event){
     console.log("being fed")
     decrementHunger();
+    feedTime();
 })
 
 //this click will sleep the pet
@@ -35,6 +36,7 @@ $("#sleep").on("click", function (event){
 $("#play").on("click", function (event){
     console.log("playing")
     decrementBoredom();
+    playTime();
 })
 
 /* NOTE Functions */
@@ -120,7 +122,8 @@ const decrementBoredom = function decrementBoredom(){
 
 //this function will feed the pet
     const feedTime = function feedTime(){
-
+        let audio = document.getElementById("audio");
+        audio.play();
     }
 
 //this function will sleep the pet
@@ -130,6 +133,56 @@ const decrementBoredom = function decrementBoredom(){
         $sleeper.attr("class", "sleep");
         setTimeout(() => $sleeper.removeClass("sleep"), 3000);
     }
+
+//this function will entertain the pet
+const playTime = function playTime(){
+    if (lifecycle === 0){
+        let $player = $("#game_screen div");
+        let save = $player.clone();
+        $player.remove();
+        let $playing = $("<div id = 'baby_play'></div>");
+        $("#game_screen").append($playing);
+        const swap = function swap() {
+            $($playing).remove();
+            $("#game_screen").append(save)
+        };
+        setTimeout(swap , 3000);
+    } else {if (lifecycle === 1){
+        let $player = $("#game_screen div");
+        let save = $player.clone();
+        $player.remove();
+        let $playing = $("<div id = 'child_play'></div>");
+        $("#game_screen").append($playing);
+        const swap = function swap() {
+            $($playing).remove();
+            $("#game_screen").append(save)
+        };
+        setTimeout(swap , 3000);
+    } else if (lifecycle === 2) {
+        let $player = $("#game_screen div");
+        let save = $player.clone();
+        $player.remove();
+        let $playing = $("<div id = 'teen_play'></div>");
+        $("#game_screen").append($playing);
+        const swap = function swap() {
+            $($playing).remove();
+            $("#game_screen").append(save)
+        };
+        setTimeout(swap , 3000);
+    } else if (lifecycle === 3) {
+        let $player = $("#game_screen div");
+        let save = $player.clone();
+        $player.remove();
+        let $playing = $("<div id = 'adult_play'></div>");
+        $("#game_screen").append($playing);
+        const swap = function swap() {
+            $($playing).remove();
+            $("#game_screen").append(save)
+        };
+        setTimeout(swap , 3000);
+    }
+    }
+}
 
 //sets the time for the game and executes time based actions
     const setTimer = function setTimer(interval){
