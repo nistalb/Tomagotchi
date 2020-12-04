@@ -4,7 +4,7 @@ let bored = 0;
 let sleep = 0;
 let lifecycle = 0;
 let petName = "";
-let time = 10;
+let time = 120;
 let age = ["a Baby", "a Child", " a Teenager", "an Adult", "dead"];
 
 
@@ -213,7 +213,7 @@ const babyPet = function babyPet() {
     bored = 0;
     sleep = 0;
     interval = 5;
-    time = 10;
+    time = 120;
 
     $("#header_string").text(`${petName} is ${age[lifecycle]}`);
 
@@ -225,7 +225,7 @@ const childPet = function childPet() {
     bored = 0;
     sleep = 0;
     interval = 7;
-    time = 10;
+    time = 120;
 
     $("#notice_screen").text("");
     $("#notice_screen").append(`<p class = "message">${petName} has become ${age[lifecycle]}!</p>`);
@@ -244,7 +244,7 @@ const teenPet = function teenPet() {
     bored = 0;
     sleep = 0;
     interval = 6;
-    time = 10;
+    time = 120;
     
     $("#notice_screen").text("");
     $("#notice_screen").append(`<p class = "message">${petName} has become ${age[lifecycle]}!</p>`);
@@ -263,7 +263,7 @@ const adultPet = function adultPet() {
     bored = 0;
     sleep = 0;
     interval = 8;
-    time = 10;
+    time = 120;
     
     $("#notice_screen").text("");
     $("#notice_screen").append(`<p class = "message">${petName} has become ${age[lifecycle]}!</p>`);
