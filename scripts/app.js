@@ -278,16 +278,16 @@ const adultPet = function adultPet() {
 
 const deadPet = function deadPet() {
     $("#notice_screen").text("");
-    $("#notice_screen").append(`<p class = "message">${petName} is ${age[lifecycle]}!</p>`);
+    $("#notice_screen").append(`<p class = "message">${petName} is dead!</p>`);
     switchScreens();
 
-    let $pet = $("#adult_img");
+    let $pet = $("#game_screen div");
     $pet.attr("id", "dead_img");
     
     let $resetButton = $("<button>Reset Game</button>");
     $("#game_screen").append($resetButton);
     delayTimer(switchScreens, 3);
-    $("#header_string").text(`${petName} is ${age[lifecycle]}`);
+    $("#header_string").text(`${petName} is dead`);
     $resetButton.on("click", function () {
         document.location.reload()
     })
