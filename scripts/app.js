@@ -162,6 +162,7 @@ const decrementBoredom = function decrementBoredom(){
     }
 
 /**
+ * Replaces the default image of the pet with the playing pet.
  * Clones the child element of game_screen and saves it.  Then removes the child element and replaces it with another element that has a different Id, thereby calling a new CSS animation.  The new animation plays for 3 seconds and then is replaced by the saved cloned element. 
  */
 const playTime = function playTime(){
@@ -217,6 +218,7 @@ const playTime = function playTime(){
  * Executes the timing for the game.  Counts down the time variable every second.  Calls functions incrementBoredom, incrementHunber, and incrementSleepiness after a given interval.  Monitors the status of hunger, bored, and sleep variables and executes the deadPet function if any of the variables reach 10.  
  * When time has reached zero the pet lifecyle will increment and the game will continue until all lifecycles have been reached.
  * @param {number} interval the time value used to increment hunger, boredom, and sleepiness
+ * @author This code was borrowed from Dalton Hart
  */
     const setTimer = function setTimer(interval){
         const updateTime = function updateTime(){
