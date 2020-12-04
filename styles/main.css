@@ -7,7 +7,7 @@
 body {
     font-family: 'Englebert', sans-serif;
     text-align: center;
-    background-color: azure;
+    background-color: rgb(183, 247, 247);
 }
 
 header {
@@ -49,6 +49,7 @@ button {
     height: 40px;
     width: 60px;
     cursor: pointer;
+    outline: none;
 }
 
 #gamespace {
@@ -57,12 +58,13 @@ button {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+   
 }
 
 #frame {
     width: 400px;
     height: 550px;
-    border-radius: 50%;
+    border-radius: 35%;
     position: absolute;
     -webkit-box-shadow: 14px 17px 19px 3px rgba(0,0,0,0.6);
     -moz-box-shadow: 14px 17px 19px 3px rgba(0,0,0,0.6);
