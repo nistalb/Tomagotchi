@@ -27,9 +27,11 @@ $("#feed").on("click", function (event){
 $("#sleep").on("click", function (event){
     console.log("sleeping")
     decrementSleepiness();
+    sleepTime();
+
 })
 
-//this click will play the pet
+//this click will entertain the pet
 $("#play").on("click", function (event){
     console.log("playing")
     decrementBoredom();
@@ -115,6 +117,19 @@ const decrementBoredom = function decrementBoredom(){
         $("#boredom").text(bored);
     }
 }
+
+//this function will feed the pet
+    const feedTime = function feedTime(){
+
+    }
+
+//this function will sleep the pet
+    const sleepTime = function sleepTime(){
+        let $sleeper = $("#game_screen div");
+        console.log($sleeper);
+        $sleeper.attr("class", "sleep");
+        setTimeout(() => $sleeper.removeClass("sleep"), 3000);
+    }
 
 //sets the time for the game and executes time based actions
     const setTimer = function setTimer(interval){
