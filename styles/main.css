@@ -8,6 +8,8 @@ body {
     font-family: 'Englebert', sans-serif;
     text-align: center;
     background-color: rgb(183, 247, 247);
+    height: auto;
+    overflow: auto;
 }
 
 header {
@@ -53,12 +55,12 @@ button {
 }
 
 #gamespace {
-    height: 80vh;
+    height: 550px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-   
+    margin-top: 30px;
 }
 
 #frame {
@@ -88,8 +90,6 @@ button {
     -moz-box-shadow: inset 10px 10px 29px 0px rgba(0,0,0,0.6);
     box-shadow: inset 10px 10px 29px 0px rgba(0,0,0,0.6);
 }
-
-
 
 #notice_screen {
     margin: auto;
@@ -133,6 +133,7 @@ input {
     font-family: 'Englebert', sans-serif;
     color: #3C412C;
 }
+
 #pet-name {
     font-family: 'Englebert', sans-serif;
     height: 50px;
@@ -146,7 +147,7 @@ input {
 }
 
 #game-buttons{
-    margin-bottom: 75px;
+    margin-bottom: 50px;
     padding: 5px;
     height: 30px;
     width: 200;
