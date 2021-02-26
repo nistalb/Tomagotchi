@@ -250,7 +250,7 @@ const babyPet = function babyPet() {
     hunger = 0;
     bored = 0;
     sleep = 0;
-    interval = 6;
+    interval = 4;
     time = 60;
 
     $("#header_string").text(`${petName} is ${age[lifecycle]}`);
@@ -265,7 +265,7 @@ const childPet = function childPet() {
     hunger = 0;
     bored = 0;
     sleep = 0;
-    interval = 7;
+    interval = 5;
     time = 60;
 
     $("#notice_screen").text("");
@@ -284,7 +284,7 @@ const teenPet = function teenPet() {
     hunger = 0;
     bored = 0;
     sleep = 0;
-    interval = 8;
+    interval = 6;
     time = 60;
     
     $("#notice_screen").text("");
@@ -303,7 +303,7 @@ const adultPet = function adultPet() {
     hunger = 0;
     bored = 0;
     sleep = 0;
-    interval = 9;
+    interval = 7;
     time = 60;
     
     $("#notice_screen").text("");
