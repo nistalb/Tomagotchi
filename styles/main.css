@@ -42,6 +42,13 @@ li {
     color: #b37514;
 }
 
+@media (max-width: 600px) {
+    li {
+        font-size: 1em;
+        padding: 10px 15px 10px 15px;
+    }
+}
+
 button {
     font-family: 'Englebert', sans-serif;
     background-color: #3C412C;
