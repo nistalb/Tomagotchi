@@ -58,7 +58,6 @@ button {
     height: 550px;
     display: flex;
     display: -webkit-flex;
-    display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
     flex-direction: row;
@@ -88,7 +87,6 @@ button {
     border-radius: 20px;
     display: flex;
     display: -webkit-flex;
-    display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
     flex-direction: column;
