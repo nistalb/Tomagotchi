@@ -57,7 +57,7 @@ button {
 #gamespace {
     height: 550px;
     display: flex;
-    display: -webkit-flex;
+    display: -webkit-flexbox;
     display: -moz-box;
     display: -ms-flexbox;
     flex-direction: row;
@@ -86,7 +86,7 @@ button {
     visibility: hidden;
     border-radius: 20px;
     display: flex;
-    display: -webkit-flex;
+    display: -webkit-flexbox;
     display: -moz-box;
     display: -ms-flexbox;
     flex-direction: column;
@@ -153,11 +153,8 @@ input {
 }
 
 #game-buttons{
-    margin-bottom: 50px;
-    padding: 5px;
-    height: 30px;
+    height: 75px;
     width: 200;
-    line-height: 20px; 
     position: absolute;
     align-self: flex-end;   
 }
