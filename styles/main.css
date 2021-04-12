@@ -87,6 +87,10 @@ button {
     visibility: hidden;
     border-radius: 20px;
     display: flex;
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
     flex-direction: column;
     justify-content: center;
     align-items: center;
